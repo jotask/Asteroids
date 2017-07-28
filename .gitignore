@@ -69,3 +69,9 @@ build/
 .DS_Store
 Thumbs.db
 core/assets/
+!/html/build/dist/
+!/html/build/
+/html/build/dependency-cache/
+/html/build/tmp/
+/html/build/classes/
+/html/build/gwt/
