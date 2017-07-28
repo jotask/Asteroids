@@ -75,3 +75,5 @@ core/assets/
 /html/build/tmp/
 /html/build/classes/
 /html/build/gwt/
+/html/build/
+/html/build/dist/
