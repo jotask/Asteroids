@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.utils.TimeUtils;
 
 import java.util.LinkedList;
 
@@ -36,7 +35,9 @@ public class Asteroids extends ApplicationAdapter {
 
     private Player player;
 
-    private long startTime = 0l;
+    private Timer timer;
+
+    private Hud hud;
 
     public Asteroids() {
         Asteroids.instance = this;
@@ -62,15 +63,18 @@ public class Asteroids extends ApplicationAdapter {
 
         player = new Player();
 
-        startTime = TimeUtils.nanoTime();
+        timer = new Timer(1f);
+        this.hud = new Hud();
 
     }
 
     @Override
     public void resize(int width, int height) {
-        this.camera.setToOrtho(false, width, height);
+        this.camera.setToOrtho(true, width, height);
         this.camera.update();
         this.bounds.set(camera.position.x - width / 2f, camera.position.y - height / 2f, width, height);
+
+        this.hud.resize(width, height);
     }
 
     private void update() {
@@ -111,19 +115,14 @@ public class Asteroids extends ApplicationAdapter {
         for(final Asteroid a: asteroids)
             a.update();
 
-        // 1000000000 = 1 sec
-        if (TimeUtils.timeSinceNanos(startTime) > 1000000000) {
-            // if time passed since the time you set startTime at is more than 1 second
-
+        if (timer.isPassed(true)) {
             if(asteroids.size() < 4)
             {
                 this.asteroids.add(new Asteroid());
             }
-
-            //also you can set the new startTime
-            //so this block will execute every one second
-            startTime = TimeUtils.nanoTime();
         }
+
+        this.hud.update();
 
     }
 
@@ -146,6 +145,10 @@ public class Asteroids extends ApplicationAdapter {
 
         player.render(sr);
 
+        sr.end();
+
+        sr.begin();
+        this.hud.render(sr);
         sr.end();
 
     }

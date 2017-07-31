@@ -20,7 +20,7 @@ public class Asteroid {
     static final float[] vertices = {
             -.13f, .1f, // 0
             0f, 1f, // 1
-            1f, 1f, // 2
+            0f, 1.5f, // 2
             1.7f, 1.7f, // 3
             1.75f, .75f, // 4
             .9f, 0f // 5

@@ -15,15 +15,26 @@ import com.badlogic.gdx.math.Vector2;
  */
 public class Player {
 
+    public final boolean KEYBOARD = false;
+
     public final float SCALE = 10f;
     public final float ROTATION = 5f;
     public final float SPEED = 7f;
+
+    final float maxSpeed = 4f;
+    final float maxForce = 0.1f;
 
     private final Vector2 pos;
 
     private final Polygon polygon;
 
     private float angle = 0f;
+
+    private final Timer timer;
+
+    private final Vector2 acceleration = new Vector2(0, 0);
+    private final Vector2 velocity = new Vector2(0, 0);
+    private final Vector2 target = new Vector2();
 
     public Player() {
 
@@ -39,34 +50,64 @@ public class Player {
         this.polygon.setPosition(pos.x, pos.y);
         this.polygon.setScale(SCALE, SCALE);
 
+        this.timer = new Timer(.5f);
+
+        this.target.set(Asteroids.get().getCamera().viewportWidth / 2f, Asteroids.get().getCamera().viewportHeight / 2f);
+
     }
 
     public void update()
     {
 
-        if(Gdx.input.isKeyPressed(Input.Keys.A))
-        {
-            polygon.rotate(ROTATION);
-            angle += ROTATION;
-        }else if(Gdx.input.isKeyPressed(Input.Keys.D))
-        {
-            polygon.rotate(-ROTATION);
-            angle -= ROTATION;
-        }
+        if(KEYBOARD) {
 
-        if(Gdx.input.isKeyPressed(Input.Keys.W)) {
-            pos.x += this.SPEED * Math.cos(angle * Math.PI / 180);
-            pos.y += this.SPEED * Math.sin(angle * Math.PI / 180);
-        }
+            if (Gdx.input.isKeyPressed(Input.Keys.A)) {
+                polygon.rotate(ROTATION);
+                angle += ROTATION;
+            } else if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+                polygon.rotate(-ROTATION);
+                angle -= ROTATION;
+            }
 
-        if(Gdx.input.isKeyPressed(Input.Keys.S)) {
-            pos.x -= this.SPEED * Math.cos(angle * Math.PI / 180);
-            pos.y -= this.SPEED * Math.sin(angle * Math.PI / 180);
-        }
+            if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+                pos.x += this.SPEED * Math.cos(angle * Math.PI / 180);
+                pos.y += this.SPEED * Math.sin(angle * Math.PI / 180);
+            }
 
-        if(Gdx.input.isKeyJustPressed(Input.Keys.SPACE))
-        {
-            Asteroids.get().getBullets().add(new Bullet(this));
+            if (Gdx.input.isKeyPressed(Input.Keys.S)) {
+                pos.x -= this.SPEED * Math.cos(angle * Math.PI / 180);
+                pos.y -= this.SPEED * Math.sin(angle * Math.PI / 180);
+            }
+
+            if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
+                Asteroids.get().getBullets().add(new Bullet(this));
+            }
+
+        }else {
+
+            if(Gdx.input.isTouched()) {
+                this.target.set(Gdx.input.getX(), Gdx.input.getY());
+                if (this.timer.isPassed(true))
+                {
+                    Asteroids.get().getBullets().add(new Bullet(this));
+                }
+            }else{
+                this.target.set(this.pos);
+            }
+
+            this.seek(this.target);
+
+            this.velocity.add(acceleration);
+            this.velocity.limit(maxSpeed);
+            this.pos.add(velocity);
+            this.acceleration.scl(0f);
+
+            this.angle = velocity.angle();
+
+            this.angle = (this.velocity.angle() != 0.0)? velocity.angle() : this.angle;
+
+            this.polygon.setRotation(this.angle);
+
         }
 
         final Rectangle bounds = polygon.getBoundingRectangle();
@@ -92,9 +133,27 @@ public class Player {
 
     }
 
+    private void seek(final Vector2 t)
+    {
+
+        final Vector2 tmp = new Vector2(t.x, t.y);
+
+        Vector2 desired = tmp.sub(pos);
+        desired.nor();
+        desired.scl(maxSpeed);
+        // Steering = Desired minus velocity
+        Vector2 steering = desired.sub(this.velocity);
+        steering.limit(maxForce);
+
+        acceleration.add(steering);
+
+    }
+
     public void render(final ShapeRenderer sr)
     {
         sr.polygon(polygon.getTransformedVertices());
+
+        sr.circle(this.target.x, this.target.y, 3f);
     }
 
     public float getAngle() { return angle; }
