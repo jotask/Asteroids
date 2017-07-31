@@ -1,5 +1,7 @@
 package com.github.jotask.breakout.asteroid;
 
+import com.badlogic.gdx.utils.TimeUtils;
+
 /**
  * Timer
  *
@@ -29,13 +31,13 @@ public class Timer {
     }
 
     public void reset(){
-        this.next = System.nanoTime() + time;
+        this.next = TimeUtils.nanoTime() + time;
     }
 
     public boolean isPassed(){ return this.isPassed(false);}
     public boolean isPassed(boolean reset){
 
-        boolean b = (System.nanoTime() > this.next);
+        boolean b = (TimeUtils.nanoTime() > this.next);
 
         if(reset && b)
             reset();
