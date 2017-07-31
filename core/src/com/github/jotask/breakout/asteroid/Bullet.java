@@ -49,13 +49,13 @@ public class Bullet {
         return !bounds.contains(this.polygon.getBoundingRectangle());
     }
 
-    public boolean collides(final Asteroid asteroid)
+    public boolean collides(final Polygon other)
     {
         Rectangle a = this.getPolygon().getBoundingRectangle();
-        Rectangle b = asteroid.getPolygon().getBoundingRectangle();
+        Rectangle b = other.getBoundingRectangle();
         if(a.overlaps(b))
         {
-            return Intersector.overlapConvexPolygons(this.getPolygon(), asteroid.getPolygon());
+            return Intersector.overlapConvexPolygons(this.getPolygon(), other);
         }
         return false;
     }

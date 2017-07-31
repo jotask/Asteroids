@@ -7,6 +7,9 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
+import com.github.jotask.breakout.asteroid.upgrades.Upgrade;
+import com.github.jotask.breakout.asteroid.utils.Timer;
+import com.github.jotask.breakout.asteroid.utils.Utils;
 
 import java.util.LinkedList;
 
@@ -33,6 +36,8 @@ public class Asteroids extends ApplicationAdapter {
 
     private LinkedList<Bullet> bullets;
 
+    private LinkedList<Upgrade> upgrades;
+
     private Player player;
 
     private Timer timer;
@@ -52,6 +57,8 @@ public class Asteroids extends ApplicationAdapter {
         this.bounds = new Rectangle();
 
         this.bullets = new LinkedList<Bullet>();
+
+        this.upgrades = new LinkedList<Upgrade>();
 
         this.asteroids = new LinkedList<Asteroid>();
 
@@ -93,7 +100,7 @@ public class Asteroids extends ApplicationAdapter {
             final LinkedList<Asteroid> as = new LinkedList<Asteroid>(this.asteroids);
             for(final Asteroid ast: this.asteroids)
             {
-                if(b.collides(ast)) {
+                if(b.collides(ast.getPolygon())) {
                     survived.remove(b);
 
                     LinkedList<Asteroid> childs = ast.mutate();
@@ -124,6 +131,29 @@ public class Asteroids extends ApplicationAdapter {
 
         this.hud.update();
 
+        if(this.upgrades.isEmpty() && !this.player.hasUpgrade())
+            this.upgrades.add(Utils.randomUpgrade());
+
+        final LinkedList<Upgrade> us = new LinkedList<Upgrade>(this.upgrades);
+        for(final Upgrade u: this.upgrades)
+        {
+            u.update();
+
+            if(u.isFinish())
+            {
+                us.remove(u);
+            }
+
+            if(player.collides(u.getBounds()))
+            {
+                u.pickUP(player);
+                us.remove(u);
+            }
+
+        }
+        this.upgrades.clear();
+        this.upgrades.addAll(us);
+
     }
 
     @Override
@@ -139,6 +169,9 @@ public class Asteroids extends ApplicationAdapter {
         sr.set(ShapeRenderer.ShapeType.Filled);
         for(final Asteroid a: this.asteroids)
             a.render(sr);
+
+        for(final Upgrade u: this.upgrades)
+            u.render(sr);
 
         for(final Bullet b: bullets)
             b.render(sr);
@@ -164,5 +197,7 @@ public class Asteroids extends ApplicationAdapter {
     }
 
     public LinkedList<Bullet> getBullets() { return bullets; }
+
+    public Player getPlayer() { return player; }
 
 }

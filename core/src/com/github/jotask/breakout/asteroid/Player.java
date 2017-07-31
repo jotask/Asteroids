@@ -1,11 +1,14 @@
 package com.github.jotask.breakout.asteroid;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.github.jotask.breakout.asteroid.upgrades.Upgrade;
+import com.github.jotask.breakout.asteroid.utils.Timer;
 
 /**
  * Player
@@ -15,14 +18,15 @@ import com.badlogic.gdx.math.Vector2;
  */
 public class Player {
 
-    public final boolean KEYBOARD = false;
+//    public final boolean KEYBOARD = false;
 
     public final float SCALE = 10f;
-    public final float ROTATION = 5f;
-    public final float SPEED = 7f;
+    public final float SHOOT = .5f;
+//    public final float ROTATION = 5f;
+//    public final float SPEED = 7f;
 
-    final float maxSpeed = 4f;
-    final float maxForce = 0.1f;
+    public float maxSpeed = 4f;
+    public float maxForce = 0.1f;
 
     private final Vector2 pos;
 
@@ -30,11 +34,15 @@ public class Player {
 
     private float angle = 0f;
 
-    private final Timer timer;
+    public final Timer timer;
+
+    public Color color = Color.WHITE;
 
     private final Vector2 acceleration = new Vector2(0, 0);
     private final Vector2 velocity = new Vector2(0, 0);
     private final Vector2 target = new Vector2();
+
+    private Upgrade upgrade;
 
     public Player() {
 
@@ -50,7 +58,7 @@ public class Player {
         this.polygon.setPosition(pos.x, pos.y);
         this.polygon.setScale(SCALE, SCALE);
 
-        this.timer = new Timer(.5f);
+        this.timer = new Timer(SHOOT);
 
         this.target.set(Asteroids.get().getCamera().viewportWidth / 2f, Asteroids.get().getCamera().viewportHeight / 2f);
 
@@ -59,31 +67,31 @@ public class Player {
     public void update()
     {
 
-        if(KEYBOARD) {
-
-            if (Gdx.input.isKeyPressed(Input.Keys.A)) {
-                polygon.rotate(ROTATION);
-                angle += ROTATION;
-            } else if (Gdx.input.isKeyPressed(Input.Keys.D)) {
-                polygon.rotate(-ROTATION);
-                angle -= ROTATION;
-            }
-
-            if (Gdx.input.isKeyPressed(Input.Keys.W)) {
-                pos.x += this.SPEED * Math.cos(angle * Math.PI / 180);
-                pos.y += this.SPEED * Math.sin(angle * Math.PI / 180);
-            }
-
-            if (Gdx.input.isKeyPressed(Input.Keys.S)) {
-                pos.x -= this.SPEED * Math.cos(angle * Math.PI / 180);
-                pos.y -= this.SPEED * Math.sin(angle * Math.PI / 180);
-            }
-
-            if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
-                Asteroids.get().getBullets().add(new Bullet(this));
-            }
-
-        }else {
+//        if(KEYBOARD) {
+//
+//            if (Gdx.input.isKeyPressed(Input.Keys.A)) {
+//                polygon.rotate(ROTATION);
+//                angle += ROTATION;
+//            } else if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+//                polygon.rotate(-ROTATION);
+//                angle -= ROTATION;
+//            }
+//
+//            if (Gdx.input.isKeyPressed(Input.Keys.W)) {
+//                pos.x += this.SPEED * Math.cos(angle * Math.PI / 180);
+//                pos.y += this.SPEED * Math.sin(angle * Math.PI / 180);
+//            }
+//
+//            if (Gdx.input.isKeyPressed(Input.Keys.S)) {
+//                pos.x -= this.SPEED * Math.cos(angle * Math.PI / 180);
+//                pos.y -= this.SPEED * Math.sin(angle * Math.PI / 180);
+//            }
+//
+//            if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
+//                Asteroids.get().getBullets().add(new Bullet(this));
+//            }
+//
+//        }else {
 
             if(Gdx.input.isTouched()) {
                 this.target.set(Gdx.input.getX(), Gdx.input.getY());
@@ -108,7 +116,7 @@ public class Player {
 
             this.polygon.setRotation(this.angle);
 
-        }
+//        }
 
         final Rectangle bounds = polygon.getBoundingRectangle();
         if(bounds.getX() + bounds.getWidth() < 0f)
@@ -131,6 +139,29 @@ public class Player {
 
         polygon.setPosition(pos.x, pos.y);
 
+        if(upgrade != null)
+        {
+            if(this.upgrade.isFinish()){
+                this.upgrade.end();
+                this.upgrade = null;
+            }
+        }
+
+    }
+
+    public boolean collides(final Polygon other)
+    {
+        if(this.polygon.getBoundingRectangle().overlaps(other.getBoundingRectangle()))
+        {
+            return Intersector.overlapConvexPolygons(this.polygon, other);
+        }
+        return false;
+    }
+
+    public void pickUp(final Upgrade up)
+    {
+        this.upgrade = up;
+        this.upgrade.start();
     }
 
     private void seek(final Vector2 t)
@@ -151,13 +182,20 @@ public class Player {
 
     public void render(final ShapeRenderer sr)
     {
+        sr.setColor(color);
         sr.polygon(polygon.getTransformedVertices());
 
+        sr.setColor(Color.WHITE);
         sr.circle(this.target.x, this.target.y, 3f);
     }
 
     public float getAngle() { return angle; }
 
     public Vector2 getPosition() { return pos; }
+
+    public boolean hasUpgrade()
+    {
+        return (this.upgrade != null);
+    }
 
 }

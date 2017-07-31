@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.github.jotask.breakout.asteroid.utils.Utils;
 
 import java.util.LinkedList;
 
@@ -64,8 +65,9 @@ public class Asteroid {
 
         this.vel = new Vector2();
 
-        this.vel.x = MathUtils.random(-1f, 1f) * SPEED;
-        this.vel.y = MathUtils.random(-1f, 1f) * SPEED;
+        this.vel.add(Utils.getRandomVelocity().scl(SPEED));
+//        this.vel.x = MathUtils.random(-1f, 1f) * SPEED;
+//        this.vel.y = MathUtils.random(-1f, 1f) * SPEED;
 
         this.polygon.rotate(MathUtils.random(0, 360));
 
