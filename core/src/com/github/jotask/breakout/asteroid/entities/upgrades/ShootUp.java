@@ -1,4 +1,4 @@
-package com.github.jotask.breakout.asteroid.upgrades;
+package com.github.jotask.breakout.asteroid.entities.upgrades;
 
 /**
  * ShootUp

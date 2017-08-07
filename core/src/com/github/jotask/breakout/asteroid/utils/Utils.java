@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.github.jotask.breakout.asteroid.Asteroids;
-import com.github.jotask.breakout.asteroid.upgrades.Upgrade;
+import com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade;
 
 /**
  * Utils

@@ -1,4 +1,4 @@
-package com.github.jotask.breakout.asteroid.upgrades;
+package com.github.jotask.breakout.asteroid.entities.upgrades;
 
 import com.badlogic.gdx.graphics.Color;
 import com.github.jotask.breakout.asteroid.utils.Utils;

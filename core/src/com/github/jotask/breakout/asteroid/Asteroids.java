@@ -7,7 +7,11 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
-import com.github.jotask.breakout.asteroid.upgrades.Upgrade;
+import com.github.jotask.breakout.asteroid.entities.Asteroid;
+import com.github.jotask.breakout.asteroid.entities.Bullet;
+import com.github.jotask.breakout.asteroid.entities.Player;
+import com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade;
+import com.github.jotask.breakout.asteroid.hud.Hud;
 import com.github.jotask.breakout.asteroid.utils.Timer;
 import com.github.jotask.breakout.asteroid.utils.Utils;
 
@@ -23,7 +27,7 @@ public class Asteroids extends ApplicationAdapter {
 
     private static Asteroids instance;
 
-    public static final Asteroids get(){ return instance; }
+    public static Asteroids get(){ return instance; }
 
     private final Color c = new Color(Color.BLACK);
 
@@ -62,12 +66,6 @@ public class Asteroids extends ApplicationAdapter {
 
         this.asteroids = new LinkedList<Asteroid>();
 
-        for(int i = 0; i < 1; i++)
-        {
-            final Asteroid a = new Asteroid();
-            this.asteroids.add(a);
-        }
-
         player = new Player();
 
         timer = new Timer(1f);
@@ -82,6 +80,24 @@ public class Asteroids extends ApplicationAdapter {
         this.bounds.set(camera.position.x - width / 2f, camera.position.y - height / 2f, width, height);
 
         this.hud.resize(width, height);
+    }
+
+    private void reset()
+    {
+        this.asteroids.clear();
+        this.bullets.clear();
+        this.upgrades.clear();
+
+        for(int i = 0; i < 1; i++)
+        {
+            final Asteroid a = new Asteroid();
+            this.asteroids.add(a);
+        }
+
+        this.player.reset();
+
+        this.timer.reset();
+
     }
 
     private void update() {
@@ -100,7 +116,7 @@ public class Asteroids extends ApplicationAdapter {
             final LinkedList<Asteroid> as = new LinkedList<Asteroid>(this.asteroids);
             for(final Asteroid ast: this.asteroids)
             {
-                if(b.collides(ast.getPolygon())) {
+                if(b.collides(ast)) {
                     survived.remove(b);
 
                     LinkedList<Asteroid> childs = ast.mutate();
@@ -119,8 +135,15 @@ public class Asteroids extends ApplicationAdapter {
         this.bullets.clear();
         this.bullets.addAll(survived);
 
-        for(final Asteroid a: asteroids)
+        for(final Asteroid a: asteroids) {
             a.update();
+
+            if(a.collides(player))
+            {
+                player.damage(.1f);
+            }
+
+        }
 
         if (timer.isPassed(true)) {
             if(asteroids.size() < 4)
@@ -144,7 +167,7 @@ public class Asteroids extends ApplicationAdapter {
                 us.remove(u);
             }
 
-            if(player.collides(u.getBounds()))
+            if(player.collides(u))
             {
                 u.pickUP(player);
                 us.remove(u);

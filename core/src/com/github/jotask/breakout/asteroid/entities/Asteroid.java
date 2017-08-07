@@ -1,4 +1,4 @@
-package com.github.jotask.breakout.asteroid;
+package com.github.jotask.breakout.asteroid.entities;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -6,6 +6,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.github.jotask.breakout.asteroid.Asteroids;
 import com.github.jotask.breakout.asteroid.utils.Utils;
 
 import java.util.LinkedList;
@@ -16,9 +17,9 @@ import java.util.LinkedList;
  * @author Jose Vives Iznardo
  * @since 27/07/2017
  */
-public class Asteroid {
+public class Asteroid extends Entity{
 
-    static final float[] vertices = {
+    private static final float[] vertices = {
             -.13f, .1f, // 0
             0f, 1f, // 1
             0f, 1.5f, // 2
@@ -44,8 +45,6 @@ public class Asteroid {
 
     private final Type type;
 
-    private final Polygon polygon;
-
     private final Vector2 vel;
 
     public Asteroid() {
@@ -53,31 +52,31 @@ public class Asteroid {
     }
 
     public Asteroid(final Asteroid parent) {
-        this(Type.values()[(parent.type.ordinal() + 1)], parent.polygon.getX(), parent.polygon.getY());
+        this(Type.values()[(parent.type.ordinal() + 1)], parent.getPolygon().getX(), parent.getPolygon().getY());
     }
 
     public Asteroid(final Type type, float x, float y) {
+        super(vertices);
         this.type = type;
 
-        this.polygon = new Polygon(vertices);
-        this.polygon.setPosition(x, y);
-        this.polygon.setScale(this.type.size, this.type.size);
+        final Polygon polygon = this.getPolygon();
+        polygon.setPosition(x, y);
+        polygon.setScale(this.type.size, this.type.size);
 
         this.vel = new Vector2();
 
         this.vel.add(Utils.getRandomVelocity().scl(SPEED));
-//        this.vel.x = MathUtils.random(-1f, 1f) * SPEED;
-//        this.vel.y = MathUtils.random(-1f, 1f) * SPEED;
 
-        this.polygon.rotate(MathUtils.random(0, 360));
+        polygon.rotate(MathUtils.random(0, 360));
+
 
     }
 
     public void update()
     {
-        final Vector2 pos = new Vector2(polygon.getX(), polygon.getY());
+        final Vector2 pos = new Vector2(this.getPolygon().getX(), this.getPolygon().getY());
 
-        final Rectangle bounds = polygon.getBoundingRectangle();
+        final Rectangle bounds = this.getPolygon().getBoundingRectangle();
         if(bounds.getX() + bounds.getWidth() < 0f)
         {
             pos.x = Asteroids.get().getCamera().viewportWidth;
@@ -97,14 +96,14 @@ public class Asteroid {
         }
 
         pos.add(vel);
-        this.polygon.setPosition(pos.x, pos.y);
+        this.getPolygon().setPosition(pos.x, pos.y);
 
     }
 
     public void render(final ShapeRenderer sr)
     {
         sr.setColor(Color.WHITE);
-        sr.polygon(polygon.getTransformedVertices());
+        sr.polygon(this.getPolygon().getTransformedVertices());
     }
 
     public LinkedList<Asteroid> mutate()
@@ -123,11 +122,8 @@ public class Asteroid {
         return childs;
     }
 
-    public Polygon getPolygon() {
-        return polygon;
-    }
-
     public Type getType() {
         return type;
     }
+
 }
