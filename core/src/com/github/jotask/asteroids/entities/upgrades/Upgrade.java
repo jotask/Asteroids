@@ -1,12 +1,14 @@
-package com.github.jotask.breakout.asteroid.entities.upgrades;
+package com.github.jotask.asteroids.entities.upgrades;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
-import com.github.jotask.breakout.asteroid.Asteroids;
-import com.github.jotask.breakout.asteroid.entities.Entity;
-import com.github.jotask.breakout.asteroid.entities.Player;
-import com.github.jotask.breakout.asteroid.utils.Timer;
-import com.github.jotask.breakout.asteroid.utils.Utils;
+import com.github.jotask.asteroids.Asteroids;
+import com.github.jotask.asteroids.entities.Player;
+import com.github.jotask.asteroids.hud.Component;
+import com.github.jotask.asteroids.hud.UpgradeTimer;
+import com.github.jotask.asteroids.entities.Entity;
+import com.github.jotask.asteroids.utils.Timer;
+import com.github.jotask.asteroids.utils.Utils;
 
 /**
  * Upgrade
@@ -65,13 +67,24 @@ public abstract class Upgrade extends Entity {
     }
 
     public boolean isFinish() {
-        return this.timer.isPassed();
+        final boolean tmp = this.timer.isPassed();
+        return tmp;
     }
 
     public void pickUP(final Player player) {
         this.timer.setWaitTime(UPGRADETIME);
         this.timer.reset();
         player.pickUp(this);
+
+        final UpgradeTimer ut = getUpgradeTimer();
+    }
+
+    private UpgradeTimer getUpgradeTimer(){
+        for(Component c: Asteroids.get().getHud().getComponents()){
+            if(c instanceof UpgradeTimer)
+                return (UpgradeTimer) c;
+        }
+        return null;
     }
 
     public void update(){

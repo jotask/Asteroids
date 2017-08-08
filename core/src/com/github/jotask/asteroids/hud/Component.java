@@ -1,6 +1,8 @@
-package com.github.jotask.breakout.asteroid.hud;
+package com.github.jotask.asteroids.hud;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 /**
@@ -22,5 +24,7 @@ public abstract class Component {
     public abstract void resize(final OrthographicCamera camera);
 
     public abstract void render(final ShapeRenderer sr);
+
+    public abstract void renderFont(final SpriteBatch sb, final BitmapFont fnt);
 
 }

@@ -1,4 +1,4 @@
-package com.github.jotask.breakout.asteroid.entities;
+package com.github.jotask.asteroids.entities;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;

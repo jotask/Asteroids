@@ -1,14 +1,15 @@
-package com.github.jotask.breakout.asteroid.entities;
+package com.github.jotask.asteroids.entities;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.github.jotask.breakout.asteroid.Asteroids;
-import com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade;
-import com.github.jotask.breakout.asteroid.utils.Timer;
+import com.github.jotask.asteroids.Asteroids;
+import com.github.jotask.asteroids.entities.upgrades.Upgrade;
+import com.github.jotask.asteroids.utils.Timer;
 
 /**
  * Player
@@ -18,7 +19,7 @@ import com.github.jotask.breakout.asteroid.utils.Timer;
  */
 public class Player extends Entity{
 
-    private static final float[] vertices = new float[] {
+    public static final float[] vertices = new float[] {
             -1, -1,
             2, 0f,
             -1, 1
@@ -71,7 +72,8 @@ public class Player extends Entity{
     }
 
     public void reset(){
-        this.pos.set(100, 100);
+        final OrthographicCamera cam = Asteroids.get().getCamera();
+        this.pos.set(cam.position.x + (cam.viewportWidth * .5f), cam.position.y + (cam.position.y * .5f));
         this.getPolygon().setPosition(pos.x, pos.y);
         this.health = 1f;
         this.lifes--;
@@ -180,6 +182,10 @@ public class Player extends Entity{
 
     public float getHealth() {
         return health;
+    }
+
+    public int getLifes() {
+        return lifes;
     }
 
 }

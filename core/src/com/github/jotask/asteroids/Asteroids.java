@@ -1,4 +1,4 @@
-package com.github.jotask.breakout.asteroid;
+package com.github.jotask.asteroids;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
@@ -7,13 +7,13 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
-import com.github.jotask.breakout.asteroid.entities.Asteroid;
-import com.github.jotask.breakout.asteroid.entities.Bullet;
-import com.github.jotask.breakout.asteroid.entities.Player;
-import com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade;
-import com.github.jotask.breakout.asteroid.hud.Hud;
-import com.github.jotask.breakout.asteroid.utils.Timer;
-import com.github.jotask.breakout.asteroid.utils.Utils;
+import com.github.jotask.asteroids.entities.Bullet;
+import com.github.jotask.asteroids.entities.Asteroid;
+import com.github.jotask.asteroids.entities.Player;
+import com.github.jotask.asteroids.entities.upgrades.Upgrade;
+import com.github.jotask.asteroids.hud.Hud;
+import com.github.jotask.asteroids.utils.Timer;
+import com.github.jotask.asteroids.utils.Utils;
 
 import java.util.LinkedList;
 
@@ -140,7 +140,7 @@ public class Asteroids extends ApplicationAdapter {
 
             if(a.collides(player))
             {
-                player.damage(.1f);
+                player.damage(.01f);
             }
 
         }
@@ -203,15 +203,14 @@ public class Asteroids extends ApplicationAdapter {
 
         sr.end();
 
-        sr.begin();
         this.hud.render(sr);
-        sr.end();
 
     }
 
     @Override
     public void dispose() {
-        sr.dispose();
+        this.sr.dispose();
+        this.getHud().dispose();
         Asteroids.instance = null;
     }
 
@@ -219,8 +218,9 @@ public class Asteroids extends ApplicationAdapter {
         return camera;
     }
 
-    public LinkedList<Bullet> getBullets() { return bullets; }
-
     public Player getPlayer() { return player; }
 
+    public Hud getHud() {
+        return hud;
+    }
 }

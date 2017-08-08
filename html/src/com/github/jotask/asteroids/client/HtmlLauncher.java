@@ -1,10 +1,10 @@
-package com.github.jotask.breakout.client;
+package com.github.jotask.asteroids.client;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import com.github.jotask.breakout.asteroid.Asteroids;
+import com.github.jotask.asteroids.Asteroids;
 import com.google.gwt.event.logical.shared.ResizeEvent;
 import com.google.gwt.event.logical.shared.ResizeHandler;
 

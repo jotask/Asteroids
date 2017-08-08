@@ -4368,22 +4368,22 @@ jkb,com.github.jotask.breakout.asteroid.Asteroid$Type::MEDIUM,com.github.jotask.
 kkb,com.github.jotask.breakout.asteroid.Asteroid$Type::SMALL,com.github.jotask.breakout.asteroid.Asteroid$Type,SMALL,com/github/jotask/breakout/asteroid/Asteroid.java,32,-1
 a,com.github.jotask.breakout.asteroid.Asteroid$Type::size,com.github.jotask.breakout.asteroid.Asteroid$Type,size,com/github/jotask/breakout/asteroid/Asteroid.java,34,-1
 nkb,com.github.jotask.breakout.asteroid.Asteroid$Type::values()[Lcom/github/jotask/breakout/asteroid/Asteroid$Type;,com.github.jotask.breakout.asteroid.Asteroid$Type,values,com/github/jotask/breakout/asteroid/Asteroid.java,30,0
-Asteroids,,com.github.jotask.breakout.asteroid.Asteroids,,com/github/jotask/breakout/asteroid/Asteroids.java,22,-1
-pkb,com.github.jotask.breakout.asteroid.Asteroids::$create(Lcom/github/jotask/breakout/asteroid/Asteroids;)V,com.github.jotask.breakout.asteroid.Asteroids,$create,com/github/jotask/breakout/asteroid/Asteroids.java,52,0
-qkb,com.github.jotask.breakout.asteroid.Asteroids::$render(Lcom/github/jotask/breakout/asteroid/Asteroids;)V,com.github.jotask.breakout.asteroid.Asteroids,$render,com/github/jotask/breakout/asteroid/Asteroids.java,160,0
-rkb,com.github.jotask.breakout.asteroid.Asteroids::$resize(Lcom/github/jotask/breakout/asteroid/Asteroids;II)V,com.github.jotask.breakout.asteroid.Asteroids,$resize,com/github/jotask/breakout/asteroid/Asteroids.java,79,0
-skb,com.github.jotask.breakout.asteroid.Asteroids::$update(Lcom/github/jotask/breakout/asteroid/Asteroids;)V,com.github.jotask.breakout.asteroid.Asteroids,$update,com/github/jotask/breakout/asteroid/Asteroids.java,87,0
-tkb,com.github.jotask.breakout.asteroid.Asteroids::Asteroids() <init>,com.github.jotask.breakout.asteroid.Asteroids,Asteroids,com/github/jotask/breakout/asteroid/Asteroids.java,47,0
-a,com.github.jotask.breakout.asteroid.Asteroids::asteroids,com.github.jotask.breakout.asteroid.Asteroids,asteroids,com/github/jotask/breakout/asteroid/Asteroids.java,35,-1
-b,com.github.jotask.breakout.asteroid.Asteroids::bounds,com.github.jotask.breakout.asteroid.Asteroids,bounds,com/github/jotask/breakout/asteroid/Asteroids.java,33,-1
-c,com.github.jotask.breakout.asteroid.Asteroids::bullets,com.github.jotask.breakout.asteroid.Asteroids,bullets,com/github/jotask/breakout/asteroid/Asteroids.java,37,-1
-d,com.github.jotask.breakout.asteroid.Asteroids::camera,com.github.jotask.breakout.asteroid.Asteroids,camera,com/github/jotask/breakout/asteroid/Asteroids.java,32,-1
-e,com.github.jotask.breakout.asteroid.Asteroids::hud,com.github.jotask.breakout.asteroid.Asteroids,hud,com/github/jotask/breakout/asteroid/Asteroids.java,45,-1
-okb,com.github.jotask.breakout.asteroid.Asteroids::instance,com.github.jotask.breakout.asteroid.Asteroids,instance,com/github/jotask/breakout/asteroid/Asteroids.java,24,-1
-f,com.github.jotask.breakout.asteroid.Asteroids::player,com.github.jotask.breakout.asteroid.Asteroids,player,com/github/jotask/breakout/asteroid/Asteroids.java,41,-1
-g,com.github.jotask.breakout.asteroid.Asteroids::sr,com.github.jotask.breakout.asteroid.Asteroids,sr,com/github/jotask/breakout/asteroid/Asteroids.java,30,-1
-i,com.github.jotask.breakout.asteroid.Asteroids::timer,com.github.jotask.breakout.asteroid.Asteroids,timer,com/github/jotask/breakout/asteroid/Asteroids.java,43,-1
-j,com.github.jotask.breakout.asteroid.Asteroids::upgrades,com.github.jotask.breakout.asteroid.Asteroids,upgrades,com/github/jotask/breakout/asteroid/Asteroids.java,39,-1
+Asteroids,,Asteroids,,com/github/jotask/breakout/asteroid/Asteroids.java,22,-1
+pkb,Asteroids::$create(Lcom/github/jotask/breakout/asteroid/Asteroids;)V,Asteroids,$create,com/github/jotask/breakout/asteroid/Asteroids.java,52,0
+qkb,Asteroids::$render(Lcom/github/jotask/breakout/asteroid/Asteroids;)V,Asteroids,$render,com/github/jotask/breakout/asteroid/Asteroids.java,160,0
+rkb,Asteroids::$resize(Lcom/github/jotask/breakout/asteroid/Asteroids;II)V,Asteroids,$resize,com/github/jotask/breakout/asteroid/Asteroids.java,79,0
+skb,Asteroids::$update(Lcom/github/jotask/breakout/asteroid/Asteroids;)V,Asteroids,$update,com/github/jotask/breakout/asteroid/Asteroids.java,87,0
+tkb,Asteroids::Asteroids() <init>,Asteroids,Asteroids,com/github/jotask/breakout/asteroid/Asteroids.java,47,0
+a,Asteroids::asteroids,Asteroids,asteroids,com/github/jotask/breakout/asteroid/Asteroids.java,35,-1
+b,Asteroids::bounds,Asteroids,bounds,com/github/jotask/breakout/asteroid/Asteroids.java,33,-1
+c,Asteroids::bullets,Asteroids,bullets,com/github/jotask/breakout/asteroid/Asteroids.java,37,-1
+d,Asteroids::camera,Asteroids,camera,com/github/jotask/breakout/asteroid/Asteroids.java,32,-1
+e,Asteroids::hud,Asteroids,hud,com/github/jotask/breakout/asteroid/Asteroids.java,45,-1
+okb,Asteroids::instance,Asteroids,instance,com/github/jotask/breakout/asteroid/Asteroids.java,24,-1
+f,Asteroids::player,Asteroids,player,com/github/jotask/breakout/asteroid/Asteroids.java,41,-1
+g,Asteroids::sr,Asteroids,sr,com/github/jotask/breakout/asteroid/Asteroids.java,30,-1
+i,Asteroids::timer,Asteroids,timer,com/github/jotask/breakout/asteroid/Asteroids.java,43,-1
+j,Asteroids::upgrades,Asteroids,upgrades,com/github/jotask/breakout/asteroid/Asteroids.java,39,-1
 Bullet,,com.github.jotask.breakout.asteroid.Bullet,,com/github/jotask/breakout/asteroid/Bullet.java,15,-1
 vkb,com.github.jotask.breakout.asteroid.Bullet::$clinit()V,com.github.jotask.breakout.asteroid.Bullet,$clinit,com/github/jotask/breakout/asteroid/Bullet.java,15,0
 wkb,com.github.jotask.breakout.asteroid.Bullet::$collides(Lcom/github/jotask/breakout/asteroid/Bullet;Lcom/badlogic/gdx/math/Polygon;)Z,com.github.jotask.breakout.asteroid.Bullet,$collides,com/github/jotask/breakout/asteroid/Bullet.java,52,0
@@ -4393,11 +4393,11 @@ zkb,com.github.jotask.breakout.asteroid.Bullet::Bullet(Lcom/github/jotask/breako
 a,com.github.jotask.breakout.asteroid.Bullet::angle,com.github.jotask.breakout.asteroid.Bullet,angle,com/github/jotask/breakout/asteroid/Bullet.java,29,-1
 b,com.github.jotask.breakout.asteroid.Bullet::polygon,com.github.jotask.breakout.asteroid.Bullet,polygon,com/github/jotask/breakout/asteroid/Bullet.java,28,-1
 ukb,com.github.jotask.breakout.asteroid.Bullet::vertices,com.github.jotask.breakout.asteroid.Bullet,vertices,com/github/jotask/breakout/asteroid/Bullet.java,19,-1
-Hud,,com.github.jotask.breakout.asteroid.hud.Hud,,com/github/jotask/breakout/asteroid/Hud.java,12,-1
-Akb,com.github.jotask.breakout.asteroid.hud.Hud::$render(Lcom/github/jotask/breakout/asteroid/Hud;Lcom/badlogic/gdx/graphics/glutils/ShapeRenderer;)V,com.github.jotask.breakout.asteroid.hud.Hud,$render,com/github/jotask/breakout/asteroid/Hud.java,34,0
-Bkb,com.github.jotask.breakout.asteroid.hud.Hud::$resize(Lcom/github/jotask/breakout/asteroid/Hud;FF)V,com.github.jotask.breakout.asteroid.hud.Hud,$resize,com/github/jotask/breakout/asteroid/Hud.java,23,0
-Ckb,com.github.jotask.breakout.asteroid.hud.Hud::Hud() <init>,com.github.jotask.breakout.asteroid.hud.Hud,Hud,com/github/jotask/breakout/asteroid/Hud.java,18,0
-a,com.github.jotask.breakout.asteroid.hud.Hud::camera,com.github.jotask.breakout.asteroid.hud.Hud,camera,com/github/jotask/breakout/asteroid/Hud.java,16,-1
+Hud,,Hud,,com/github/jotask/breakout/asteroid/Hud.java,12,-1
+Akb,Hud::$render(Lcom/github/jotask/breakout/asteroid/Hud;Lcom/badlogic/gdx/graphics/glutils/ShapeRenderer;)V,Hud,$render,com/github/jotask/breakout/asteroid/Hud.java,34,0
+Bkb,Hud::$resize(Lcom/github/jotask/breakout/asteroid/Hud;FF)V,Hud,$resize,com/github/jotask/breakout/asteroid/Hud.java,23,0
+Ckb,Hud::Hud() <init>,Hud,Hud,com/github/jotask/breakout/asteroid/Hud.java,18,0
+a,Hud::camera,Hud,camera,com/github/jotask/breakout/asteroid/Hud.java,16,-1
 Player,,com.github.jotask.breakout.asteroid.Player,,com/github/jotask/breakout/asteroid/Player.java,19,-1
 Dkb,com.github.jotask.breakout.asteroid.Player::$collides(Lcom/github/jotask/breakout/asteroid/Player;Lcom/badlogic/gdx/math/Polygon;)Z,com.github.jotask.breakout.asteroid.Player,$collides,com/github/jotask/breakout/asteroid/Player.java,152,0
 Ekb,com.github.jotask.breakout.asteroid.Player::$render(Lcom/github/jotask/breakout/asteroid/Player;Lcom/badlogic/gdx/graphics/glutils/ShapeRenderer;)V,com.github.jotask.breakout.asteroid.Player,$render,com/github/jotask/breakout/asteroid/Player.java,183,0
@@ -4415,56 +4415,56 @@ i,com.github.jotask.breakout.asteroid.Player::target,com.github.jotask.breakout.
 j,com.github.jotask.breakout.asteroid.Player::timer,com.github.jotask.breakout.asteroid.Player,timer,com/github/jotask/breakout/asteroid/Player.java,37,-1
 k,com.github.jotask.breakout.asteroid.Player::upgrade,com.github.jotask.breakout.asteroid.Player,upgrade,com/github/jotask/breakout/asteroid/Player.java,45,-1
 n,com.github.jotask.breakout.asteroid.Player::velocity,com.github.jotask.breakout.asteroid.Player,velocity,com/github/jotask/breakout/asteroid/Player.java,42,-1
-ColorUp,,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp,,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,12,-1
-Pkb,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp::ColorUp() <init>,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp,ColorUp,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,17,0
-a,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp::color,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp,color,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,14,-1
-Qkb,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp::end()V,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp,end,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,35,0
-b,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp::prev,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp,prev,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,15,-1
-Rkb,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp::reset()V,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp,reset,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,24,0
-Skb,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp::start()V,com.github.jotask.breakout.asteroid.entities.upgrades.ColorUp,start,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,30,0
-ShootUp,,com.github.jotask.breakout.asteroid.entities.upgrades.ShootUp,,com/github/jotask/breakout/asteroid/upgrades/ShootUp.java,9,-1
-Tkb,com.github.jotask.breakout.asteroid.entities.upgrades.ShootUp::ShootUp() <init>,com.github.jotask.breakout.asteroid.entities.upgrades.ShootUp,ShootUp,com/github/jotask/breakout/asteroid/upgrades/ShootUp.java,14,0
-Ukb,com.github.jotask.breakout.asteroid.entities.upgrades.ShootUp::end()V,com.github.jotask.breakout.asteroid.entities.upgrades.ShootUp,end,com/github/jotask/breakout/asteroid/upgrades/ShootUp.java,25,0
-a,com.github.jotask.breakout.asteroid.entities.upgrades.ShootUp::prev,com.github.jotask.breakout.asteroid.entities.upgrades.ShootUp,prev,com/github/jotask/breakout/asteroid/upgrades/ShootUp.java,11,-1
-b,com.github.jotask.breakout.asteroid.entities.upgrades.ShootUp::shoot,com.github.jotask.breakout.asteroid.entities.upgrades.ShootUp,shoot,com/github/jotask/breakout/asteroid/upgrades/ShootUp.java,12,-1
-Vkb,com.github.jotask.breakout.asteroid.entities.upgrades.ShootUp::start()V,com.github.jotask.breakout.asteroid.entities.upgrades.ShootUp,start,com/github/jotask/breakout/asteroid/upgrades/ShootUp.java,19,0
-SpeedUp,,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp,,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,9,-1
-Wkb,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp::SpeedUp() <init>,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp,SpeedUp,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,11,0
-Xkb,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp::end()V,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp,end,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,30,0
-a,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp::forceMult,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp,forceMult,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,16,-1
-b,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp::prevForce,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp,prevForce,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,19,-1
-c,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp::prevSpeed,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp,prevSpeed,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,18,-1
-d,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp::speedMult,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp,speedMult,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,15,-1
-Ykb,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp::start()V,com.github.jotask.breakout.asteroid.entities.upgrades.SpeedUp,start,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,22,0
-Upgrade,,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,17,-1
-Jkb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade::$clinit()V,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,$clinit,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,17,0
-Kkb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade::$pickUP(Lcom/github/jotask/breakout/asteroid/upgrades/Upgrade;Lcom/github/jotask/breakout/asteroid/Player;)V,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,$pickUP,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,73,0
-Lkb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade::$render(Lcom/github/jotask/breakout/asteroid/upgrades/Upgrade;Lcom/badlogic/gdx/graphics/glutils/ShapeRenderer;)V,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,$render,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,83,0
-Mkb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade::$reset(Lcom/github/jotask/breakout/asteroid/upgrades/Upgrade;)V,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,$reset,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,61,0
-e,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade::LIFETIME,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,LIFETIME,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,43,-1
-f,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade::UPGRADETIME,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,UPGRADETIME,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,44,-1
-Nkb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade::Upgrade(FF) <init>,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,Upgrade,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,48,0
-g,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade::player,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,player,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,41,-1
-i,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade::polygon,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,polygon,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,46,-1
-Okb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade::reset()V,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,reset,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,61,0
-j,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade::timer,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,timer,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,40,-1
-Ikb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade::vert,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade,vert,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,33,-1
-Upgrade$Upgrades,,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades,,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,19,-1
-alb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades::$clinit()V,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades,$clinit,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,19,0
-Zkb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades::COLOR,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades,COLOR,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,21,-1
-$kb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades::SHOOT,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades,SHOOT,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,22,-1
-_kb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades::SPEED,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades,SPEED,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,23,-1
-blb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades::Upgrade$Upgrades(Ljava/lang/String;ILcom/github/jotask/breakout/asteroid/upgrades/Upgrade;) <init>,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades,Upgrade$Upgrades,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,26,0
-a,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades::upgrade,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades,upgrade,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,25,-1
-clb,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades::values()[Lcom/github/jotask/breakout/asteroid/upgrades/Upgrade$Upgrades;,com.github.jotask.breakout.asteroid.entities.upgrades.Upgrade$Upgrades,values,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,19,0
-Timer,,com.github.jotask.breakout.asteroid.utils.Timer,,com/github/jotask/breakout/asteroid/utils/Timer.java,11,-1
-dlb,com.github.jotask.breakout.asteroid.utils.Timer::$isPassed(Lcom/github/jotask/breakout/asteroid/utils/Timer;Z)Z,com.github.jotask.breakout.asteroid.utils.Timer,$isPassed,com/github/jotask/breakout/asteroid/utils/Timer.java,43,0
-elb,com.github.jotask.breakout.asteroid.utils.Timer::$reset(Lcom/github/jotask/breakout/asteroid/utils/Timer;)V,com.github.jotask.breakout.asteroid.utils.Timer,$reset,com/github/jotask/breakout/asteroid/utils/Timer.java,38,0
-flb,com.github.jotask.breakout.asteroid.utils.Timer::$setWaitTime(Lcom/github/jotask/breakout/asteroid/utils/Timer;F)V,com.github.jotask.breakout.asteroid.utils.Timer,$setWaitTime,com/github/jotask/breakout/asteroid/utils/Timer.java,33,0
-glb,com.github.jotask.breakout.asteroid.utils.Timer::$toSec(Lcom/github/jotask/breakout/asteroid/utils/Timer;F)J,com.github.jotask.breakout.asteroid.utils.Timer,$toSec,com/github/jotask/breakout/asteroid/utils/Timer.java,23,0
-hlb,com.github.jotask.breakout.asteroid.utils.Timer::Timer(F) <init>,com.github.jotask.breakout.asteroid.utils.Timer,Timer,com/github/jotask/breakout/asteroid/utils/Timer.java,16,0
-a,com.github.jotask.breakout.asteroid.utils.Timer::next,com.github.jotask.breakout.asteroid.utils.Timer,next,com/github/jotask/breakout/asteroid/utils/Timer.java,14,-1
-b,com.github.jotask.breakout.asteroid.utils.Timer::time,com.github.jotask.breakout.asteroid.utils.Timer,time,com/github/jotask/breakout/asteroid/utils/Timer.java,13,-1
+ColorUp,,ColorUp,,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,12,-1
+Pkb,ColorUp::ColorUp() <init>,ColorUp,ColorUp,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,17,0
+a,ColorUp::color,ColorUp,color,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,14,-1
+Qkb,ColorUp::end()V,ColorUp,end,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,35,0
+b,ColorUp::prev,ColorUp,prev,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,15,-1
+Rkb,ColorUp::reset()V,ColorUp,reset,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,24,0
+Skb,ColorUp::start()V,ColorUp,start,com/github/jotask/breakout/asteroid/upgrades/ColorUp.java,30,0
+ShootUp,,ShootUp,,com/github/jotask/breakout/asteroid/upgrades/ShootUp.java,9,-1
+Tkb,ShootUp::ShootUp() <init>,ShootUp,ShootUp,com/github/jotask/breakout/asteroid/upgrades/ShootUp.java,14,0
+Ukb,ShootUp::end()V,ShootUp,end,com/github/jotask/breakout/asteroid/upgrades/ShootUp.java,25,0
+a,ShootUp::prev,ShootUp,prev,com/github/jotask/breakout/asteroid/upgrades/ShootUp.java,11,-1
+b,ShootUp::shoot,ShootUp,shoot,com/github/jotask/breakout/asteroid/upgrades/ShootUp.java,12,-1
+Vkb,ShootUp::start()V,ShootUp,start,com/github/jotask/breakout/asteroid/upgrades/ShootUp.java,19,0
+SpeedUp,,SpeedUp,,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,9,-1
+Wkb,SpeedUp::SpeedUp() <init>,SpeedUp,SpeedUp,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,11,0
+Xkb,SpeedUp::end()V,SpeedUp,end,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,30,0
+a,SpeedUp::forceMult,SpeedUp,forceMult,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,16,-1
+b,SpeedUp::prevForce,SpeedUp,prevForce,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,19,-1
+c,SpeedUp::prevSpeed,SpeedUp,prevSpeed,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,18,-1
+d,SpeedUp::speedMult,SpeedUp,speedMult,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,15,-1
+Ykb,SpeedUp::start()V,SpeedUp,start,com/github/jotask/breakout/asteroid/upgrades/SpeedUp.java,22,0
+Upgrade,,Upgrade,,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,17,-1
+Jkb,Upgrade::$clinit()V,Upgrade,$clinit,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,17,0
+Kkb,Upgrade::$pickUP(Lcom/github/jotask/breakout/asteroid/upgrades/Upgrade;Lcom/github/jotask/breakout/asteroid/Player;)V,Upgrade,$pickUP,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,73,0
+Lkb,Upgrade::$render(Lcom/github/jotask/breakout/asteroid/upgrades/Upgrade;Lcom/badlogic/gdx/graphics/glutils/ShapeRenderer;)V,Upgrade,$render,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,83,0
+Mkb,Upgrade::$reset(Lcom/github/jotask/breakout/asteroid/upgrades/Upgrade;)V,Upgrade,$reset,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,61,0
+e,Upgrade::LIFETIME,Upgrade,LIFETIME,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,43,-1
+f,Upgrade::UPGRADETIME,Upgrade,UPGRADETIME,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,44,-1
+Nkb,Upgrade::Upgrade(FF) <init>,Upgrade,Upgrade,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,48,0
+g,Upgrade::player,Upgrade,player,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,41,-1
+i,Upgrade::polygon,Upgrade,polygon,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,46,-1
+Okb,Upgrade::reset()V,Upgrade,reset,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,61,0
+j,Upgrade::timer,Upgrade,timer,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,40,-1
+Ikb,Upgrade::vert,Upgrade,vert,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,33,-1
+Upgrade$Upgrades,,Upgrade$Upgrades,,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,19,-1
+alb,Upgrade$Upgrades::$clinit()V,Upgrade$Upgrades,$clinit,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,19,0
+Zkb,Upgrade$Upgrades::COLOR,Upgrade$Upgrades,COLOR,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,21,-1
+$kb,Upgrade$Upgrades::SHOOT,Upgrade$Upgrades,SHOOT,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,22,-1
+_kb,Upgrade$Upgrades::SPEED,Upgrade$Upgrades,SPEED,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,23,-1
+blb,Upgrade$Upgrades::Upgrade$Upgrades(Ljava/lang/String;ILcom/github/jotask/breakout/asteroid/upgrades/Upgrade;) <init>,Upgrade$Upgrades,Upgrade$Upgrades,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,26,0
+a,Upgrade$Upgrades::upgrade,Upgrade$Upgrades,upgrade,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,25,-1
+clb,Upgrade$Upgrades::values()[Lcom/github/jotask/breakout/asteroid/upgrades/Upgrade$Upgrades;,Upgrade$Upgrades,values,com/github/jotask/breakout/asteroid/upgrades/Upgrade.java,19,0
+Timer,,Timer,,com/github/jotask/breakout/asteroid/utils/Timer.java,11,-1
+dlb,Timer::$isPassed(Lcom/github/jotask/breakout/asteroid/utils/Timer;Z)Z,Timer,$isPassed,com/github/jotask/breakout/asteroid/utils/Timer.java,43,0
+elb,Timer::$reset(Lcom/github/jotask/breakout/asteroid/utils/Timer;)V,Timer,$reset,com/github/jotask/breakout/asteroid/utils/Timer.java,38,0
+flb,Timer::$setWaitTime(Lcom/github/jotask/breakout/asteroid/utils/Timer;F)V,Timer,$setWaitTime,com/github/jotask/breakout/asteroid/utils/Timer.java,33,0
+glb,Timer::$toSec(Lcom/github/jotask/breakout/asteroid/utils/Timer;F)J,Timer,$toSec,com/github/jotask/breakout/asteroid/utils/Timer.java,23,0
+hlb,Timer::Timer(F) <init>,Timer,Timer,com/github/jotask/breakout/asteroid/utils/Timer.java,16,0
+a,Timer::next,Timer,next,com/github/jotask/breakout/asteroid/utils/Timer.java,14,-1
+b,Timer::time,Timer,time,com/github/jotask/breakout/asteroid/utils/Timer.java,13,-1
 HtmlLauncher,,com.github.jotask.breakout.client.HtmlLauncher,,com/github/jotask/breakout/client/HtmlLauncher.java,11,-1
 ilb,com.github.jotask.breakout.client.HtmlLauncher::HtmlLauncher() <init>,com.github.jotask.breakout.client.HtmlLauncher,HtmlLauncher,com/github/jotask/breakout/client/HtmlLauncher.java,11,0
 HtmlLauncher$1,,com.github.jotask.breakout.client.HtmlLauncher$1,,com/github/jotask/breakout/client/HtmlLauncher.java,16,-1

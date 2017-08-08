@@ -1,4 +1,4 @@
-package com.github.jotask.breakout.asteroid.entities;
+package com.github.jotask.asteroids.entities;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -6,8 +6,8 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.github.jotask.breakout.asteroid.Asteroids;
-import com.github.jotask.breakout.asteroid.utils.Utils;
+import com.github.jotask.asteroids.Asteroids;
+import com.github.jotask.asteroids.utils.Utils;
 
 import java.util.LinkedList;
 

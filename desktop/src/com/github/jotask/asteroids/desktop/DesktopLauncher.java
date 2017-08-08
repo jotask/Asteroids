@@ -1,8 +1,8 @@
-package com.github.jotask.breakout.desktop;
+package com.github.jotask.asteroids.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.github.jotask.breakout.asteroid.Asteroids;
+import com.github.jotask.asteroids.Asteroids;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
@@ -14,5 +14,6 @@ public class DesktopLauncher {
 		config.resizable = true;
 
 		new LwjglApplication(new Asteroids(), config);
+
 	}
 }
